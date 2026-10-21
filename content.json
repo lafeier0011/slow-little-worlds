@@ -1,0 +1,93 @@
+{
+  "site": {
+    "name": "慢游",
+    "english": "SLOW LITTLE WORLDS",
+    "tagline": "给日常，留一点发呆的时间。",
+    "description": "独立游戏与桌面小世界。把风景放在手边，让忙碌的日常，也有片刻自在。",
+    "origin": "https://little-idle-worlds-1021.gritty-emu-8664.chatgpt.site"
+  },
+  "games": [
+    {
+      "slug": "rv-world",
+      "name": "房车看世界",
+      "subtitle": "一扇窗，一杯咖啡，一段不用赶路的旅行。",
+      "description": "把房车停在喜欢的风景里，看船只驶过、云影游走，听一场雨落下。这是一段可以放在桌面一角的慢旅行。",
+      "status": "开发中",
+      "tags": [
+        "桌面陪伴",
+        "氛围观景",
+        "慢旅行"
+      ],
+      "cover": "/assets/coast.jpg",
+      "featured": true,
+      "scenes": [
+        {
+          "name": "海岬",
+          "caption": "风从海面吹来，今天就停在这里。",
+          "image": "/assets/coast.jpg"
+        },
+        {
+          "name": "江畔",
+          "caption": "看往来的车辆与游船，等一朵云慢慢走远。",
+          "image": "/assets/river.jpg"
+        },
+        {
+          "name": "赛里木湖",
+          "caption": "把雪山与湖水，留在桌面的一角。",
+          "image": "/assets/lake.jpg"
+        },
+        {
+          "name": "敦煌",
+          "caption": "沙丘、月牙泉，还有远去的驼队。",
+          "image": "/assets/desert.jpg"
+        }
+      ],
+      "downloads": [],
+      "updates": [
+        {
+          "title": "让风景陪你工作",
+          "body": "桌面组件可置顶、拖动和缩放；桌上时钟提供闹钟与番茄钟功能。"
+        },
+        {
+          "title": "下一站，慢慢选",
+          "body": "通过旅行手札切换目的地，在江畔、海岬、赛里木湖和敦煌之间旅行。"
+        },
+        {
+          "title": "等一场雨，也等天晴",
+          "body": "早、中、晚与晴、阴、雨独立切换，配合环境变化，留下不同的驻留时刻。"
+        }
+      ],
+      "storyTitle": "世界很大。\n这一刻，不用出发。",
+      "storyText": "在晴天与雨天之间切换，在白昼与夜晚之间停留。没有需要匆忙完成的旅程，只有值得多看一眼的风景。",
+      "features": [
+        {
+          "label": "陪伴",
+          "title": "桌面一角的小世界",
+          "body": "切换桌面组件，置顶、拖动或缩放，让窗外的风景留在手边。"
+        },
+        {
+          "label": "氛围",
+          "title": "晴雨之间，各有风景",
+          "body": "选择时段与天气，看水面、天空与灯光随之变化。"
+        },
+        {
+          "label": "日常",
+          "title": "顺便，照顾一下时间",
+          "body": "桌上的时钟也是闹钟和番茄钟。陪你专注，也提醒你休息。"
+        }
+      ],
+      "downloadTitle": "把这一扇窗，\n带回你的桌面。",
+      "downloadDescription": "给工作间隙、安静的夜晚，\n还有想要发呆的自己。",
+      "faq": [
+        {
+          "question": "这是网页游戏吗？",
+          "answer": "这是桌面游戏项目。本网站用于介绍作品和提供发布后的安装包，不提供浏览器内试玩。"
+        },
+        {
+          "question": "关闭游戏后，计时还会继续吗？",
+          "answer": "驻留时间只在游戏打开时累计。闹钟与番茄钟也需要游戏保持运行。"
+        }
+      ]
+    }
+  ]
+}

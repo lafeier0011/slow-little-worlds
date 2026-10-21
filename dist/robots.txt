@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://little-idle-worlds-1021.gritty-emu-8664.chatgpt.site/sitemap.xml
