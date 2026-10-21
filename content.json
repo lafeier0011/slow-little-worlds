@@ -18,18 +18,19 @@
         "氛围观景",
         "慢旅行"
       ],
-      "cover": "/assets/coast.jpg",
+      "cover": "/assets/river.gif",
+      "ogImage": "/assets/river.jpg",
       "featured": true,
       "scenes": [
+        {
+          "name": "江畔",
+          "caption": "看往来的车辆与游船，等一朵云慢慢走远。",
+          "image": "/assets/river.gif"
+        },
         {
           "name": "海岬",
           "caption": "风从海面吹来，今天就停在这里。",
           "image": "/assets/coast.jpg"
-        },
-        {
-          "name": "江畔",
-          "caption": "看往来的车辆与游船，等一朵云慢慢走远。",
-          "image": "/assets/river.jpg"
         },
         {
           "name": "赛里木湖",
