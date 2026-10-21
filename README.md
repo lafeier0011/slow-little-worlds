@@ -31,5 +31,14 @@ url 必须为 HTTPS；mirror 可选。平台只填写实际测试并发布的版
 
 ## 发布
 
-.openai/hosting.json 保存 Sites 项目 ID 与静态产物目录。首次部署默认仅本人可访问；用于向玩家公开分发时，需要将网站改为公开访问并配置真实下载地址。
-网站源码由 Sites 单独管理，不包含上层 Godot 项目或未提交改动。任何品牌、下载资料和页面调整后，先构建、检查，再同步及部署。
+网站源码托管在 GitHub 仓库 lafeier0011/slow-little-worlds，通过 GitHub Pages 公开访问：https://lafeier0011.github.io/slow-little-worlds/
+
+推送到 main 后，`.github/workflows/deploy.yml` 自动执行构建、检查并部署 `dist/`，无需手动上传产物。首次启用需在仓库 Settings → Pages → Build and deployment → Source 选择 GitHub Actions。
+
+任何品牌、下载资料和页面调整后，先本地运行 build 与 check 确认无误，再提交推送；部署结果可在仓库 Actions 页查看。
+
+## 子路径部署
+
+页面链接基于 content.json 中 site.origin 的路径自动生成。当前部署在 GitHub Pages 子路径下，origin 为 `https://lafeier0011.github.io/slow-little-worlds`，所有资源与导航链接会自动带上 `/slow-little-worlds` 前缀。
+
+改用独立域名部署在根目录时，把 origin 改成 `https://你的域名` 并重新构建即可，链接自动回到根路径。本地预览 `node server.mjs` 会按 origin 的路径提供页面。
