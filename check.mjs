@@ -7,13 +7,13 @@ const walk = dir => readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirecto
 let count=0;
 for(const file of walk('dist').filter(f=>f.endsWith('.html'))){
  const html=readFileSync(file,'utf8');
- for(const [,ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
+ // href/src are checked as links; data-* hold assets the browser fetches later.
+ for(const [,ref] of html.matchAll(/(?:href|src|data-src|data-poster|data-scene)="([^"]+)"/g)){
   if(!ref.startsWith('/'))continue;
   const [p,anchor]=strip(ref).split('#'); const target=path.join('dist',p.endsWith('/')?p+'index.html':p);
   if(!existsSync(target))throw new Error(`${file}: missing ${ref}`);
   if(anchor&&!readFileSync(target,'utf8').includes(`id="${anchor}"`))throw new Error(`Missing anchor: ${ref}`);
   count++;
  }
- for(const [,ref] of html.matchAll(/data-scene="([^"]+)"/g))if(!existsSync(path.join('dist',strip(ref))))throw new Error(`Missing scene: ${ref}`);
 }
 console.log(`Verified ${count} local references and scene assets.`);

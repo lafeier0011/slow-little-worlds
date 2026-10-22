@@ -5,3 +5,4 @@
 img{height:auto}
 .hero-actions .button{flex-shrink:0;white-space:nowrap}
 @media(max-width:380px){.quiet-note{display:none}}
+.scene-loading{position:absolute;right:16px;bottom:16px;background:#f9f7ebf2;border-radius:3px;font-size:10px;letter-spacing:1px;color:#69765b;padding:5px 11px;opacity:0;transition:opacity .25s;pointer-events:none}.scene-loading i{display:inline-block;width:5px;height:5px;border-radius:50%;background:#8a9e72;margin-right:7px;vertical-align:middle;animation:scene-pulse 1.1s ease-in-out infinite}.is-loading .scene-loading{opacity:1}@keyframes scene-pulse{0%,100%{opacity:.25}50%{opacity:1}}

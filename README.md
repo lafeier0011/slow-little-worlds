@@ -31,14 +31,37 @@ url 必须为 HTTPS；mirror 可选。平台只填写实际测试并发布的版
 
 ## 发布
 
-网站源码托管在 GitHub 仓库 lafeier0011/slow-little-worlds，通过 GitHub Pages 公开访问：https://lafeier0011.github.io/slow-little-worlds/
+网站源码托管在 GitHub 仓库 lafeier0011/slow-little-worlds，通过 GitHub Pages 公开访问：https://slowlittle.space
 
 推送到 main 后，`.github/workflows/deploy.yml` 自动执行构建、检查并部署 `dist/`，无需手动上传产物。首次启用需在仓库 Settings → Pages → Build and deployment → Source 选择 GitHub Actions。
 
 任何品牌、下载资料和页面调整后，先本地运行 build 与 check 确认无误，再提交推送；部署结果可在仓库 Actions 页查看。
 
-## 子路径部署
+## 自定义域名
 
-页面链接基于 content.json 中 site.origin 的路径自动生成。当前部署在 GitHub Pages 子路径下，origin 为 `https://lafeier0011.github.io/slow-little-worlds`，所有资源与导航链接会自动带上 `/slow-little-worlds` 前缀。
+主域名为裸域 `slowlittle.space`，站点在根目录，链接不再带子路径前缀。
 
-改用独立域名部署在根目录时，把 origin 改成 `https://你的域名` 并重新构建即可，链接自动回到根路径。本地预览 `node server.mjs` 会按 origin 的路径提供页面。
+### 一、DNS 解析（域名服务商处）
+
+| 类型 | 名称 | 值 |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` `185.199.109.153` `185.199.110.153` `185.199.111.153` |
+| AAAA | `@` | `2606:50c0:8000::153` `2606:50c0:8001::153` `2606:50c0:8002::153` `2606:50c0:8003::153` |
+| CNAME | `www` | `lafeier0011.github.io` |
+
+A 与 AAAA 建议各填全部四条，也可改用 ALIAS/ANAME 指向 `lafeier0011.github.io`（取决于服务商是否支持）。若服务商默认生成了指向自有服务器的 `@` 记录，先删掉。不要使用 `*` 通配记录。
+配好 `www` 后，GitHub 会自动把 `www.slowlittle.space` 301 跳转到裸域。
+
+### 二、仓库设置
+
+Settings → Pages → Custom domain 填入 `slowlittle.space` 并 Save，等 DNS 校验通过后勾选 **Enforce HTTPS**（证书签发最长需 24 小时）。
+
+注意：本项目用自定义 Actions 工作流发布，仓库里的 `CNAME` 文件会被 GitHub 忽略，**以 Settings 中填写的域名为准**；保留该文件只是为了改用分支发布时可直接生效。
+
+验证解析：`dig slowlittle.space +noall +answer -t A`，应回显上述四个 IP。
+
+## 域名与路径
+
+页面链接基于 content.json 中 site.origin 的路径自动生成，当前 origin 为 `https://slowlittle.space`，路径为空，所有资源与导航链接直接指向根目录。
+
+换成子路径部署时，只需把 origin 改成 `https://域名/子路径` 并重新构建，链接会自动带上前缀。本地预览 `node server.mjs` 会按 origin 的路径提供页面。
