@@ -1,3 +1,5 @@
 node_modules/
 .sites-runtime/
 *.zip
+# dist/ is rebuilt by the Actions workflow; only public/ is the real source.
+dist/
