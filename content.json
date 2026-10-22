@@ -30,19 +30,19 @@
           "poster": "/assets/river.jpg"
         },
         {
-          "name": "海岬",
+          "name": "大海",
           "caption": "风从海面吹来，今天就停在这里。",
           "image": "/assets/coast.gif",
           "poster": "/assets/coast.jpg"
         },
         {
-          "name": "赛里木湖",
+          "name": "湖泊",
           "caption": "把雪山与湖水，留在桌面的一角。",
           "image": "/assets/lake.gif",
           "poster": "/assets/lake.jpg"
         },
         {
-          "name": "敦煌",
+          "name": "大漠",
           "caption": "沙丘、月牙泉，还有远去的驼队。",
           "image": "/assets/desert.gif",
           "poster": "/assets/desert.jpg"
@@ -56,7 +56,7 @@
         },
         {
           "title": "下一站，慢慢选",
-          "body": "通过旅行手札切换目的地，在江畔、海岬、赛里木湖和敦煌之间旅行。"
+          "body": "通过旅行手札切换目的地，在江畔、大海、湖泊和大漠之间旅行。"
         },
         {
           "title": "等一场雨，也等天晴",
