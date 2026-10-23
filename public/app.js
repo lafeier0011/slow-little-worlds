@@ -8,6 +8,17 @@
  *   - a decoded animation is cached, so returning to a tab is instant
  *   - covers upgrade when they scroll into view rather than on page load
  */
+document.querySelectorAll('[data-copy-contact]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const status = button.parentElement.querySelector('.copy-status');
+    try {
+      await navigator.clipboard.writeText(button.dataset.copyContact);
+      status.textContent = '已复制，在微信中搜索添加即可。';
+    } catch {
+      status.textContent = '可长按或选中上方微信号，手动复制。';
+    }
+  });
+});
 (() => {
   const preloads = new Map();
 
