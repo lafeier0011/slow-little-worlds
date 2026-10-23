@@ -1,1 +1,2 @@
 aac596e3c34904a26051523b3b509765e271493d08dc771f0ff337e1af0ad2e9  RV-Traveling-Setup-0.1.5.exe
+01f9238d88ff21c57bf9567b5fbd6dc2e64b66ceb462ab48723dd98202b24948  RV-Traveling-Setup.exe

@@ -21,7 +21,7 @@ node server.mjs
 
 ## 下载发布
 
-当前已开放 Windows 0.1.5 在线安装器。约 2.3 MB 的安装器随网站托管于 public/downloads，完整组件分包仍从 Gitee 下载。更换安装器时同步版本文件名、content.json、SHA256SUMS.txt 与安装器界面预览。下载数据格式：
+当前已开放自动获取最新正式版的 Windows 在线安装器。约 2.3 MB 的安装器随网站托管于 public/downloads，完整组件分包仍从 Gitee 下载。官网固定下载文件名为 RV-Traveling-Setup.exe。更新安装器时同步 EXE、SHA256SUMS.txt 与界面预览；游戏更新时先上传完整分包，最后更新 Gitee catalog.json，无需更换安装器。下载数据格式：
 
 ```json
 {"platform":"Windows","version":"实际版本号","date":"实际发布日期","size":"实际文件大小","url":"https://你的下载域名/实际文件.zip","instructions":"与安装包对应的安装步骤"}

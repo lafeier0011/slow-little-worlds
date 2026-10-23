@@ -57,15 +57,20 @@
       "downloads": [
         {
           "platform": "Windows 64 位 · 在线安装器",
-          "version": "0.1.5",
+          "version": "自动获取最新版本",
           "date": "2026-10-23",
           "size": "安装器约 2.3 MB",
-          "url": "https://slowlittle.space/downloads/RV-Traveling-Setup-0.1.5.exe",
-          "mirror": "https://gitee.com/jingshuyan/rv-traveling/releases/tag/v0.1.5",
-          "instructions": "适用于 Windows 10 / 11。打开安装器，选择安装目录，点击“安装并启动”。需要联网下载约 253.5 MB 的组件文件，无需手动合并或解压。"
+          "url": "https://slowlittle.space/downloads/RV-Traveling-Setup.exe",
+          "mirror": "https://gitee.com/jingshuyan/rv-traveling/releases",
+          "instructions": "适用于 Windows 10 / 11。打开安装器后自动检查最新正式版，选择安装目录，再点击“安装并启动”。需要联网，下载大小以安装器显示为准，无需手动合并或解压。"
         }
       ],
       "updates": [
+        {
+          "date": "2026-10-23",
+          "title": "同一个安装器，出发时总是最新一站",
+          "body": "在线安装器现在会读取最新发布清单，自动下载并校验对应版本。支持自选安装目录、失败重试和快捷方式；清单读取失败时提示重试，不会自动回退到旧版。此前下载的固定 0.1.5 安装器请从本站重新下载。"
+        },
         {
           "date": "2026-10-23",
           "title": "房车梦，现在一键停进工位",
@@ -119,7 +124,7 @@
         },
         {
           "question": "需要手动下载分包、合并或解压吗？",
-          "answer": "不需要。下载上方约 2.3 MB 的安装器，打开后选择安装目录，再点“安装并启动”。安装器会自动从 Gitee 下载并处理组件文件，过程中需要联网。"
+          "answer": "不需要。打开约 2.3 MB 的安装器，它会联网读取最新发布清单。选择安装目录并点击“安装并启动”，即可自动下载、校验和解压最新正式版。"
         },
         {
           "question": "已经装过旧版，怎样更新？",
@@ -128,6 +133,10 @@
         {
           "question": "Windows 提示未知发布者怎么办？",
           "answer": "当前安装器尚未代码签名，Windows 或浏览器可能显示未知发布者提示。请确认文件来自本站；下载区提供 SHA-256 校验文件。"
+        },
+        {
+          "question": "安装器会下载最新版本吗？",
+          "answer": "会。当前官网安装器在启动和安装前读取最新发布清单，再下载对应正式版。读取失败会提示重试。之前下载的固定 0.1.5 安装器需重新下载；已有组件仍可使用组件内的更新功能。"
         }
       ]
     }
