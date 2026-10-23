@@ -1,6 +1,11 @@
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
-const { site } = JSON.parse(readFileSync('content.json', 'utf8'));
+const { site, games } = JSON.parse(readFileSync('content.json', 'utf8'));
+for (const game of games) for (const download of game.downloads) {
+ const target = new URL(download.url);
+ if (target.origin === new URL(site.origin).origin && !existsSync(path.join('dist', target.pathname)))
+  throw new Error(`Missing hosted download: ${download.url}`);
+}
 const base = new URL(site.origin).pathname.replace(/\/+$/, '');
 const strip = ref => (base && ref.startsWith(base) ? ref.slice(base.length) : ref);
 const walk = dir => readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(dir,e.name)):[path.join(dir,e.name)]);

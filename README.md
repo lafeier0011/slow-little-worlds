@@ -21,13 +21,13 @@ node server.mjs
 
 ## 下载发布
 
-当前 downloads 为空，所以页面明确显示“体验版准备中”，没有虚假链接。获得真实安装包后，上传到下载托管位置，再按以下结构填写，运行构建即可显示下载按钮：
+当前已开放 Windows 0.1.5 在线安装器。约 2.3 MB 的安装器随网站托管于 public/downloads，完整组件分包仍从 Gitee 下载。更换安装器时同步版本文件名、content.json、SHA256SUMS.txt 与安装器界面预览。下载数据格式：
 
 ```json
 {"platform":"Windows","version":"实际版本号","date":"实际发布日期","size":"实际文件大小","url":"https://你的下载域名/实际文件.zip","instructions":"与安装包对应的安装步骤"}
 ```
 
-url 必须为 HTTPS；mirror 可选。平台只填写实际测试并发布的版本。安装包单独托管，不放进网页源码。每次更新保留原版本文件地址，避免覆盖已发布文件。
+url 必须为 HTTPS；mirror 可选。平台只填写实际测试并发布的版本。完整游戏分包单独托管；小型在线安装器保存在 public/downloads，发布后可从本站直接下载。每次更新保留原版本文件地址，避免覆盖已发布文件。
 
 ## 发布
 
@@ -65,3 +65,7 @@ Settings → Pages → Custom domain 填入 `slowlittle.space` 并 Save，等 DN
 页面链接基于 content.json 中 site.origin 的路径自动生成，当前 origin 为 `https://slowlittle.space`，路径为空，所有资源与导航链接直接指向根目录。
 
 换成子路径部署时，只需把 origin 改成 `https://域名/子路径` 并重新构建，链接会自动带上前缀。本地预览 `node server.mjs` 会按 origin 的路径提供页面。
+
+## 安装器插画
+
+public/assets/office-rv-sticker.png 是内置 imagegen 生成的透明房车工位贴图，首页和下载区共用。installer-preview.png 为安装器界面预览，下载区支持点击查看大图。
